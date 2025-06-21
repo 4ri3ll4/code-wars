@@ -1,0 +1,12 @@
+let decodeMorse = function(morseCode){
+  return morseCode
+  .trim()
+    .split("   ") // separate words (3 spaces)
+    .map(word => word
+      .split(" ") // separate characters (1 space)
+      .map(char => MORSE_CODE[char] || "")
+      .join("")
+    )
+    .join(" ");
+}
+console.log(decodeMorse('.... . -.--   .--- ..- -.. .'));
